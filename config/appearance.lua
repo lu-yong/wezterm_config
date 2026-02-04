@@ -1,0 +1,41 @@
+local wezterm = require 'wezterm'
+return {
+	front_end = "WebGpu",
+
+	-- theme
+	color_scheme = "Tokyo Night Moon",
+
+  -- font = wezterm.font 'JetBrains Mono NF',
+
+  font = wezterm.font_with_fallback {
+    'JetBrains Mono',
+    'Noto Sans CJK JP',
+    'Noto Sans CJK KR',
+    'Symbols Nerd Font Mono',
+    'Noto Color Emoji',
+  },
+
+	-- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+	window_decorations = "NONE",
+
+	-- cursor
+	default_cursor_style = "BlinkingBlock",
+
+	-- font
+	font_size = 15.5,
+
+	-- scrollbar
+	enable_scroll_bar = true,
+
+	-- tab bar
+	tab_max_width = 30,
+	use_fancy_tab_bar = false,
+	hide_tab_bar_if_only_one_tab = false,
+	switch_to_last_active_tab_when_closing_tab = true,
+
+	-- pane
+	inactive_pane_hsb = {
+		saturation = 0.9,
+		brightness = 0.7,
+	},
+}
