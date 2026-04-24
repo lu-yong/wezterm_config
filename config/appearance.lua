@@ -1,6 +1,10 @@
 local wezterm = require 'wezterm'
+local gpu_adapters = require('utils.gpu-adapter')
+
 return {
-	front_end = "WebGpu",
+	front_end = "WebGpu", ---@type 'WebGpu' | 'OpenGL' | 'Software'
+  webgpu_power_preference = 'HighPerformance',
+  webgpu_preferred_adapter = gpu_adapters:pick_best(),
 
 	-- theme
 	color_scheme = "Tokyo Night Moon",
@@ -15,6 +19,7 @@ return {
     'Noto Color Emoji',
   },
 
+  -- https://github.com/wezterm/wezterm/pull/7095 merge
 	-- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	window_decorations = "NONE",
 
