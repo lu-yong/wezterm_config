@@ -1,5 +1,5 @@
-local wezterm = require 'wezterm'
 local gpu_adapters = require('utils.gpu-adapter')
+local platform = require('utils.platform')
 
 return {
 	front_end = "WebGpu", ---@type 'WebGpu' | 'OpenGL' | 'Software'
@@ -19,9 +19,8 @@ return {
     'Noto Color Emoji',
   },
 
-  -- https://github.com/wezterm/wezterm/pull/7095 merge
-	-- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
-	window_decorations = "NONE",
+	-- https://github.com/wezterm/wezterm/pull/7095 merge
+	window_decorations = platform.is_mac and "INTEGRATED_BUTTONS|RESIZE" or "NONE",
 
 	-- cursor
 	default_cursor_style = "BlinkingBlock",
