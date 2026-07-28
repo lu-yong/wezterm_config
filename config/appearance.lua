@@ -1,5 +1,6 @@
 local gpu_adapters = require('utils.gpu-adapter')
 local platform = require('utils.platform')
+local wezterm = require('wezterm')
 
 return {
 	front_end = "WebGpu", ---@type 'WebGpu' | 'OpenGL' | 'Software'
