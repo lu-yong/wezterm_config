@@ -1,19 +1,17 @@
 local wezterm = require('wezterm')
---local platform = require('utils.platform')
+local platform = require('utils.platform')
 --local backdrops = require('utils.backdrops')
 local act = wezterm.action
 
 local mod = {}
 
---if platform.is_mac then
---   mod.SUPER = 'SUPER'
---   mod.SUPER_REV = 'SUPER|CTRL'
---elseif platform.is_win or platform.is_linux then
---   mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
---   mod.SUPER_REV = 'ALT|CTRL'
---end
-mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
-mod.SUPER_REV = 'ALT|CTRL'
+if platform.is_mac then
+   mod.SUPER = 'SUPER'
+   mod.SUPER_REV = 'SUPER|CTRL'
+elseif platform.is_win or platform.is_linux then
+   mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
+   mod.SUPER_REV = 'ALT|CTRL'
+end
 
 -- stylua: ignore
 local keys = {
@@ -61,7 +59,7 @@ local keys = {
 
    -- tabs --
    -- tabs: spawn+close
-   -- { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
+   { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
    { key = 't',          mods = 'CTRL|SHIFT', action = act.SpawnTab('CurrentPaneDomain') },
    { key = 'w',          mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = false }) },
 
