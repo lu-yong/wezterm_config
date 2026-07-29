@@ -215,7 +215,7 @@ local mouse_bindings = {
 for i = 1, 8 do
 	table.insert(keys, {
 		key = tostring(i),
-		mods = "ALT",
+		mods = mod.SUPER,
 		action = act.ActivateTab(i - 1),
 	})
 end

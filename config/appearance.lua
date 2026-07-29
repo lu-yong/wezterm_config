@@ -22,6 +22,10 @@ return {
 
 	-- https://github.com/wezterm/wezterm/pull/7095 merge
 	window_decorations = platform.is_mac and "INTEGRATED_BUTTONS|RESIZE" or "NONE",
+	window_frame = {
+		font = wezterm.font('JetBrains Mono'),
+		font_size = 14,
+	},
 
 	-- cursor
 	default_cursor_style = "BlinkingBlock",
@@ -34,7 +38,8 @@ return {
 
 	-- tab bar
 	tab_max_width = 30,
-	use_fancy_tab_bar = false,
+	use_fancy_tab_bar = true,
+  show_close_tab_button_in_tabs = true,
 	hide_tab_bar_if_only_one_tab = false,
 	switch_to_last_active_tab_when_closing_tab = true,
 
