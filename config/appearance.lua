@@ -27,7 +27,7 @@ return {
 	default_cursor_style = "BlinkingBlock",
 
 	-- font
-	font_size = 15.5,
+	font_size = 15,
 
 	-- scrollbar
 	enable_scroll_bar = true,
