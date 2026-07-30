@@ -38,7 +38,7 @@ return {
 
 	-- tab bar
 	tab_max_width = 30,
-	use_fancy_tab_bar = true,
+	use_fancy_tab_bar = platform.is_mac and true or false,
 	hide_tab_bar_if_only_one_tab = false,
 	switch_to_last_active_tab_when_closing_tab = true,
 
